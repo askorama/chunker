@@ -10,7 +10,7 @@ export class NLPChunker extends Chunker {
     for (const sentence of sentences) {
       const [sentenceTokenCount, currentChunkTokenCount] = await Promise.all([
         this.getNumberOfTokens(sentence),
-        this.getNumberOfTokens(currentChunk)
+        this.getNumberOfTokens(currentChunk),
       ])
 
       if (sentenceTokenCount + currentChunkTokenCount <= maxTokensPerChunk) {
