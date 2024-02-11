@@ -6,8 +6,10 @@ await build({
   entryPoints: ["./src/main.ts"],
   outDir: "./npm",
   shims: {
-    deno: true,
+    deno: false,
   },
+  scriptModule: 'cjs',
+  test: false,
   package: {
     name: "@orama/chunker",
     version: Deno.args[0],
@@ -19,7 +21,7 @@ await build({
       url: "git+https://github.com/oramasearch/chunker",
     },
     bugs: {
-      url: "https://github.com/oramasearch/chunkerissues",
+      url: "https://github.com/oramasearch/chunker/issues",
     },
     author: {
       name: "Michele Riva",

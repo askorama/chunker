@@ -6,8 +6,6 @@ export class FixedChunker extends Chunker {
   }
 
   public async chunk(input: string, maxTokensPerChunk: number): Promise<string[]> {
-    await this.ready
-
     const words = input.split(/\s+/)
     const chunks: string[] = []
 

@@ -1,4 +1,4 @@
-import nlp from 'npm:compromise/one'
+import nlp from 'https://esm.sh/compromise@14.11.2/one'
 import { Chunker } from './common.ts'
 
 export class NLPChunker extends Chunker {
@@ -7,8 +7,6 @@ export class NLPChunker extends Chunker {
   }
 
   public async chunk(input: string, maxTokensPerChunk: number): Promise<string[]> {
-    await this.ready
-
     const sentences = nlp.tokenize(input).fullSentences().out('array')
     const chunks: string[] = []
 

@@ -6,6 +6,7 @@ env.allowLocalModels = false
 export class Chunker {
   protected verbose = false
   protected ready: Promise<boolean>
+  // deno-lint-ignore no-explicit-any
   private tokenizer: any
 
   constructor() {
@@ -22,6 +23,7 @@ export class Chunker {
   }
 
   public async getNumberOfTokens(input: string): Promise<number> {
+    await this.ready
     const result = await this.tokenizer(input)
     return result.input_ids.size
   }
