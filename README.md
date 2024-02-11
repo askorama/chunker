@@ -26,6 +26,38 @@ Orama Chunker is really easy to use. First of all, you have to decide which chun
 
 ![Chunking Strategies](/misc/chunking-strategies.png)
 
+The **Fixed Chunker** will divide your input text into several pieces of a specified size. It does not consider the semantics of your input text, as its sole purpose is to divide the text and ensure that each piece contains a maximum number of tokens. It is slightly faster and lighter as it requires fewer computations to determine the chunking strategy.
+
+On the other hand, the **NLP Chunker** divides your input into multiple sentences while preserving the overall context of each individual chunk. This method requires a bit more computing power, but it's usually the preferred option.
+
+Once you have decided which chunking strategy you want to adopt, you can import the `FixedChunker` or the `NLPChunker` into your project:
+
+```js
+import { FixedChunker } from '@orama/chunker'
+
+const input = `My large text input...`
+const maxTokens = 512
+
+const chunker = new FixedChunker()
+const result = await chunker.chunk(input, maxTokens)
+```
+
+In this example, `result` will return an array of strings, where each string contains at most `512` tokens.
+
+The **NLP Chunker** works in the same way:
+
+```js
+import { NLPChunker } from '@orama/chunker'
+
+const input = `My large text input...`
+const maxTokens = 512
+
+const chunker = new NLPChunker()
+const result = await chunker.chunk(input, maxTokens)
+```
+
+The only difference is that it will return all the sentences found in the text input, where each sentence will have at most 512 tokens.
+
 ## License
 
 [Apache 2.0](/LICENSE.md)
