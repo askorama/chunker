@@ -1,0 +1,15 @@
+{
+  "name": "@orama/chunker",
+  "tasks": {
+    "dev": "deno run --watch ./src/main.ts"
+  },
+  "fmt": {
+    "lineWidth": 100,
+    "semiColons": false,
+    "singleQuote": true,
+    "include": ["./src/**/*.ts", "./tests/**/*.ts"]
+  },
+  "lint": {
+    "include": ["./src/**/*.ts", "./tests/**/*.ts"]
+  }
+}
