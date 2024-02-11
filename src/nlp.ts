@@ -1,10 +1,9 @@
-import type { ChunkerParameters } from './common.ts'
 import nlp from 'npm:compromise/one'
 import { Chunker } from './common.ts'
 
 export class NLPChunker extends Chunker {
-  constructor(params: ChunkerParameters = {}) {
-    super(params)
+  constructor() {
+    super()
   }
 
   public async chunk(input: string, maxTokensPerChunk: number): Promise<string[]> {

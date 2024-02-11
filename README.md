@@ -56,7 +56,7 @@ const chunker = new NLPChunker()
 const result = await chunker.chunk(input, maxTokens)
 ```
 
-The only difference is that it will return all the sentences found in the text input, where each sentence will have at most 512 tokens.
+The only difference is that it will return all the sentences found in the text input, where each sentence will have at most `512` tokens.
 
 ## License
 

@@ -1,9 +1,8 @@
-import type { ChunkerParameters } from './common.ts'
 import { Chunker } from './common.ts'
 
 export class FixedChunker extends Chunker {
-  constructor(params: ChunkerParameters = {}) {
-    super(params)
+  constructor() {
+    super()
   }
 
   public async chunk(input: string, maxTokensPerChunk: number): Promise<string[]> {
