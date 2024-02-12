@@ -16,3 +16,17 @@ Deno.test('NLP chunker', async () => {
 
   assertEquals(chunks.length, 4)
 })
+
+Deno.test('NLP chunker should combine multiple sentences when their total number of token is less than a given threshold', async () => {
+  const input = dedent`
+    This is an example.
+    Every sentence here has just a few tokens.
+  `
+
+  const chunker = new NLPChunker()
+  const singleChunk = await chunker.chunk(input, 50)
+  const multipleChunks = await chunker.chunk(input, 10)
+
+  assertEquals(singleChunk.length, 1)
+  assertEquals(multipleChunks.length, 2)
+})

@@ -14,19 +14,19 @@ export class NLPChunker extends Chunker {
       ])
 
       if (sentenceTokenCount + currentChunkTokenCount <= maxTokensPerChunk) {
-        currentChunk += (currentChunk ? ' ' : '') + sentence
+        currentChunk += (currentChunk ? ' ' : '') + sentence // Ensure space between sentences
       } else {
         if (currentChunk) {
           chunks.push(currentChunk)
         }
+        currentChunk = sentenceTokenCount > maxTokensPerChunk ? '' : sentence
+
         if (sentenceTokenCount > maxTokensPerChunk) {
           chunks.push(sentence)
-          currentChunk = ''
-        } else {
-          currentChunk = sentence
         }
       }
     }
+
     if (currentChunk) {
       chunks.push(currentChunk)
     }
