@@ -1,4 +1,5 @@
 import { build, emptyDir } from "https://deno.land/x/dnt@0.37.0/mod.ts";
+import pkg from "./deno.json" assert { type: "json" };
 
 await emptyDir("./npm");
 
@@ -12,10 +13,9 @@ await build({
   test: false,
   package: {
     name: "@orama/chunker",
-    version: Deno.args[0],
+    version: pkg.version,
     description: "Split large texts into chunks with a maximum number of token. Split by fixed size or by sentence.",
     license: "Apache 2.0",
-    type: "module",
     repository: {
       type: "git",
       url: "git+https://github.com/oramasearch/chunker",

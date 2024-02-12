@@ -12,10 +12,7 @@ export class Chunker {
   constructor() {
     this.ready = this.init()
       .then(() => true)
-      .catch((err) => {
-        console.error(err)
-        return false
-      })
+      .catch(() => false)
   }
 
   private async init() {

@@ -1,5 +1,9 @@
 {
+  "version": "0.0.1",
   "name": "@orama/chunker",
+  "exports": {
+    ".": "./src/main.ts"
+  },
   "tasks": {
     "dev": "deno run --watch ./src/main.ts"
   },
