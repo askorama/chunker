@@ -1,8 +1,11 @@
-import { AutoTokenizer, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.15.0'
+import { AutoTokenizer, env } from 'npm:@xenova/transformers@2.15.0'
 
 env.useBrowserCache = false
 env.allowLocalModels = false
 
+/**
+ * Represents a Chunker object that can be used to tokenize input strings and count the number of tokens.
+ */
 export class Chunker {
   protected verbose = false
   protected ready: Promise<boolean>
@@ -15,10 +18,19 @@ export class Chunker {
       .catch(() => false)
   }
 
-  private async init() {
+  /**
+   * Initializes the Chunker object by loading the tokenizer.
+   * @returns A promise that resolves when the tokenizer is loaded successfully.
+   */
+  private async init(): Promise<void> {
     this.tokenizer = await AutoTokenizer.from_pretrained('Xenova/bert-base-uncased')
   }
 
+  /**
+   * Gets the number of tokens in the input string.
+   * @param input - The input string to tokenize.
+   * @returns A promise that resolves with the number of tokens in the input string.
+   */
   public async getNumberOfTokens(input: string): Promise<number> {
     await this.ready
     const result = await this.tokenizer(input)

@@ -1,6 +1,15 @@
 import { Chunker } from './common.ts'
 
+/**
+ * Represents a fixed chunker that splits a string into chunks based on a maximum number of tokens per chunk.
+ */
 export class FixedChunker extends Chunker {
+  /**
+   * Splits the input string into chunks based on the maximum number of tokens per chunk.
+   * @param {String} input - The input string to be chunked.
+   * @param {Number} maxTokensPerChunk - The maximum number of tokens allowed per chunk.
+   * @returns An array of strings representing the chunks.
+   */
   public async chunk(input: string, maxTokensPerChunk: number): Promise<string[]> {
     const words = input.split(/\s+/)
     const chunks: string[] = []
