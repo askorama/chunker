@@ -1,0 +1,31 @@
+name: Deno Build and Node.js Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Deno
+      uses: denoland/setup-deno@v1
+
+    - name: Build with Deno
+      run: deno run -A dnt.ts
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install Node.js dependencies
+      run: cp npm/package.json . && npm install
+
+    - name: Run tests with Node.js
+      run: node run tests/node.js/nodejs.test.js

@@ -15,5 +15,8 @@
   },
   "lint": {
     "include": ["./src/**/*.ts", "./tests/**/*.ts"]
+  },
+  "test": {
+    "exclude": ["./tests/node.js/**/*"]
   }
 }
