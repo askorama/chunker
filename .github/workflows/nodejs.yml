@@ -1,4 +1,4 @@
-name: Deno Build and Node.js Test
+name: Node.js Tests
 
 on:
   push:
