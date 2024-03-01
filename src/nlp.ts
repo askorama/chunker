@@ -12,16 +12,14 @@ export class NLPChunker extends Chunker {
    * @param {Number} maxTokensPerChunk - The maximum number of tokens allowed per chunk.
    * @returns A promise that resolves to an array of chunks.
    */
-  public async chunk(input: string, maxTokensPerChunk: number): Promise<string[]> {
+  public chunk(input: string, maxTokensPerChunk: number): string[] {
     const sentences = nlp.tokenize(input).fullSentences().out('array')
     const chunks: string[] = []
 
     let currentChunk = ''
     for (const sentence of sentences) {
-      const [sentenceTokenCount, currentChunkTokenCount] = await Promise.all([
-        this.getNumberOfTokens(sentence),
-        this.getNumberOfTokens(currentChunk),
-      ])
+      const sentenceTokenCount = this.getNumberOfTokens(sentence)
+      const currentChunkTokenCount = this.getNumberOfTokens(currentChunk)
 
       if (sentenceTokenCount + currentChunkTokenCount <= maxTokensPerChunk) {
         currentChunk += (currentChunk ? ' ' : '') + sentence
