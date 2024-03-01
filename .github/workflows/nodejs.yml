@@ -28,4 +28,4 @@ jobs:
       run: cp npm/package.json . && npm install
 
     - name: Run tests with Node.js
-      run: node run tests/node.js/nodejs.test.js
+      run: node tests/node.js/nodejs.test.js
