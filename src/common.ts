@@ -1,5 +1,5 @@
-import type { Tiktoken } from 'npm:js-tiktoken'
-import { getEncoding } from 'npm:js-tiktoken'
+import type { Tiktoken } from 'npm:js-tiktoken@1.0.10'
+import { getEncoding } from 'npm:js-tiktoken@1.0.10'
 
 /**
  * Represents a Chunker object that can be used to tokenize input strings and count the number of tokens.
