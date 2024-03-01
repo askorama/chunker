@@ -1,6 +1,7 @@
 # Orama Chunker
 
-[![Tests](https://github.com/oramasearch/chunker/actions/workflows/deno.yml/badge.svg)](https://github.com/oramasearch/chunker/actions/workflows/deno.yml)
+[![Node.js Tests](https://github.com/askorama/chunker/actions/workflows/nodejs.yml/badge.svg)](https://github.com/askorama/chunker/actions/workflows/nodejs.yml)
+[![Deno Tests](https://github.com/oramasearch/chunker/actions/workflows/deno.yml/badge.svg)](https://github.com/oramasearch/chunker/actions/workflows/deno.yml)
 
 When engaging with ChatGPT or other Large Language Models (LLMs), breaking down your input into smaller chunks is a strategy that significantly enhances the interaction experience. This approach is not just about managing the technical constraints of these models, such as input length limitations, but also about improving the quality of the dialogue. By dividing a complex query or detailed discussion into more digestible parts, users can guide the model through the conversation in a step-by-step manner. This method allows for a more nuanced understanding of the context and the specifics of each query, leading to responses that are not only accurate but also highly relevant to the user's needs.
 
