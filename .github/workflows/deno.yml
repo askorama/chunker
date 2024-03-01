@@ -31,3 +31,6 @@ jobs:
 
       - name: Run tests
         run: deno test -A
+
+      - name: Build Node.js package
+        run: deno run -A dnt.ts

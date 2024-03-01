@@ -4,7 +4,10 @@
     "specifiers": {
       "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:@xenova/transformers": "npm:@xenova/transformers@2.13.4",
+      "npm:@xenova/transformers@2.15.0": "npm:@xenova/transformers@2.15.0",
       "npm:compromise": "npm:compromise@14.11.2",
+      "npm:compromise@14.11.2": "npm:compromise@14.11.2",
+      "npm:js-tiktoken": "npm:js-tiktoken@1.0.10",
       "npm:onnxruntime-web": "npm:onnxruntime-web@1.14.0"
     },
     "npm": {
@@ -71,6 +74,15 @@
       },
       "@xenova/transformers@2.13.4": {
         "integrity": "sha512-yk8yDvQaCTEZJsasoUj+FWEM9dVcNdDXlushzJ0KjFe2oUOJ3XqICAJz1Htz/vWtM20ErGt509EKogACGYlpxA==",
+        "dependencies": {
+          "@huggingface/jinja": "@huggingface/jinja@0.1.2",
+          "onnxruntime-node": "onnxruntime-node@1.14.0",
+          "onnxruntime-web": "onnxruntime-web@1.14.0",
+          "sharp": "sharp@0.32.6"
+        }
+      },
+      "@xenova/transformers@2.15.0": {
+        "integrity": "sha512-e8pt+yLGSmwZnQR5Q/fq1NJ6fPr3+WKqxh/jF2PzfXFZ2KZsDdFQeCVlk8AnOADP4Aimlqy+Wp/xuws96/pX9A==",
         "dependencies": {
           "@huggingface/jinja": "@huggingface/jinja@0.1.2",
           "onnxruntime-node": "onnxruntime-node@1.14.0",
@@ -204,6 +216,12 @@
       "is-arrayish@0.3.2": {
         "integrity": "sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==",
         "dependencies": {}
+      },
+      "js-tiktoken@1.0.10": {
+        "integrity": "sha512-ZoSxbGjvGyMT13x6ACo9ebhDha/0FHdKA+OsQcMOWcm1Zs7r90Rhk5lhERLzji+3rA7EKpXCgwXcM5fF3DMpdA==",
+        "dependencies": {
+          "base64-js": "base64-js@1.5.1"
+        }
       },
       "long@4.0.0": {
         "integrity": "sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==",

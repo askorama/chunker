@@ -1,27 +1,23 @@
-import { AutoTokenizer, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.15.0'
+import type { Tiktoken } from 'npm:js-tiktoken'
+import { getEncoding } from 'npm:js-tiktoken'
 
-env.useBrowserCache = false
-env.allowLocalModels = false
-
+/**
+ * Represents a Chunker object that can be used to tokenize input strings and count the number of tokens.
+ */
 export class Chunker {
   protected verbose = false
-  protected ready: Promise<boolean>
-  // deno-lint-ignore no-explicit-any
-  private tokenizer: any
+  private tokenizer: Tiktoken
 
   constructor() {
-    this.ready = this.init()
-      .then(() => true)
-      .catch(() => false)
+    this.tokenizer = getEncoding('gpt2')
   }
 
-  private async init() {
-    this.tokenizer = await AutoTokenizer.from_pretrained('Xenova/bert-base-uncased')
-  }
-
-  public async getNumberOfTokens(input: string): Promise<number> {
-    await this.ready
-    const result = await this.tokenizer(input)
-    return result.input_ids.size
+  /**
+   * Gets the number of tokens in the input string.
+   * @param input - The input string to tokenize.
+   * @returns A promise that resolves with the number of tokens in the input string.
+   */
+  public getNumberOfTokens(input: string): number {
+    return this.tokenizer.encode(input).length
   }
 }
