@@ -24,7 +24,7 @@ import { FixedChunker, NLPChunker } from 'jsr:@orama/chunker'
 
 Orama Chunker is really easy to use. First of all, you have to decide which chunking strategy you want to adopt.
 
-![Chunking Strategies](/misc/chunking-strategies.png)
+![[Chunking Strategies](/misc/chunking-strategies.png)](https://raw.githubusercontent.com/askorama/chunker/main/misc/chunking-strategies.png)
 
 The **Fixed Chunker** will divide your input text into several pieces of a specified size. It does not consider the semantics of your input text, as its sole purpose is to divide the text and ensure that each piece contains a maximum number of tokens. It is slightly faster and lighter as it requires fewer computations to determine the chunking strategy.
 
