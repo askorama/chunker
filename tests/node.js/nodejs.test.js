@@ -1,4 +1,5 @@
 const test = require('node:test')
+const { strict: assert } = require('node:assert')
 const { NLPChunker } = require('../../npm/script/nlp')
 const { FixedChunker } = require('../../npm/script/fixed')
 
